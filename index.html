@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <title>Mine</title>
+  </head>
+  <body>
+    <main id="contenedor">
+        <header id="encabezado">
+            <h1 id="logo"><img src="img/logo-mine.svg" alt="Mine"></h1>
+            <h2>¿Qué es grandeza?</h2>
+            <p>Espacios que asombran y experiencias superiores pronto reescribirán su significado, regístrese y sea uno de los primeros en vivirlo desde su propio apartamento.</p>
+        </header>
+        <form action="" id="formulario">
+            <div class="form-control"><label for="nombre">Nombre</label><input type="text" name="nombre" id="nombre" required></div>
+            <div class="form-control"><label for="telefono">Teléfono</label><input type="tel" name="telefono" id="telefono" required></div>
+            <div class="form-control"><label for="correo">E-mail</label><input type="email" name="correo" id="correo" required></div>
+            <input type="submit" value="Enviar">
+        </form>
+        <div id="fondo-mine" class="fondo"></div>
+        <div class="flota-1">
+            <img id="f1-i1" src="img/flota-1-i1.svg" alt="item 1">
+            <img id="f1-i2" src="img/flota-1-i2.svg" alt="item 2">
+            <img id="f1-i3" src="img/flota-1-i1.svg" alt="item 3">
+        </div>
+        <div class="flota-2">
+            <img id="f2-i1" src="img/flota-2-i1.svg" alt="item 1">
+            <img id="f2-i2" src="img/flota-2-i2.svg" alt="item 2">
+        </div>
+        <div class="flota-3">
+            <img id="f3-i1" src="img/flota-3-i1.svg" alt="item 1">
+            <img id="f3-i2" src="img/flota-3-i2.svg" alt="item 2">
+            <img id="f3-i3" src="img/flota-3-i3.svg" alt="item 3">
+        </div>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>
+        var aleatorio = Math.floor(Math.random() * 2) + 1;
+        var elem = document.getElementById('fondo-mine');
+        elem.classList.add("opt-"+aleatorio);
+    </script>
+  </body>
+</html>
