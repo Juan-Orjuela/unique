@@ -1,26 +1,36 @@
 <!doctype html>
 <html lang="es">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/anime.min.js"></script>
 
     <title>Mine</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <main id="contenedor">
         <header id="encabezado">
             <h1 id="logo"><img src="img/logo-mine.svg" alt="Mine"></h1>
             <h2>¿Qué es grandeza?</h2>
-            <p>Espacios que asombran y experiencias superiores pronto reescribirán su significado, regístrese y sea uno de los primeros en vivirlo desde su propio apartamento.</p>
+            <p>Espacios que asombran y experiencias superiores pronto reescribirán su significado, regístrese y sea uno
+                de los primeros en vivirlo desde su propio apartamento.</p>
         </header>
         <form action="" id="formulario">
-            <div class="form-control"><label for="nombre">Nombre</label><input type="text" name="nombre" id="nombre" required></div>
-            <div class="form-control"><label for="telefono">Teléfono</label><input type="tel" name="telefono" id="telefono" required></div>
-            <div class="form-control"><label for="correo">E-mail</label><input type="email" name="correo" id="correo" required></div>
+            <div class="form-control"><label for="nombre">Nombre</label><input type="text" name="nombre" id="nombre"
+                    required></div>
+            <div class="form-control"><label for="telefono">Teléfono</label><input type="tel" name="telefono"
+                    id="telefono" required></div>
+            <div class="form-control"><label for="correo">E-mail</label><input type="email" name="correo" id="correo"
+                    required></div>
             <input type="submit" value="Enviar">
         </form>
         <div id="fondo-mine" class="fondo"></div>
@@ -41,11 +51,90 @@
     </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
     <script>
+        //Fondo aleatorio
         var aleatorio = Math.floor(Math.random() * 2) + 1;
         var elem = document.getElementById('fondo-mine');
-        elem.classList.add("opt-"+aleatorio);
+        elem.classList.add("opt-" + aleatorio);
+
+        //Dividir letras
+        var textWrapper = document.querySelector('#encabezado p');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        //Animaciones
+        var tl = anime.timeline({
+            easing: 'linear',
+            duration: 1000
+        });
+
+        // Add children
+        tl
+            .add({
+                targets: '#logo',
+                opacity: [0, 1],
+                duration: 1500
+            })
+            .add({
+                targets: '#f3-i1, #f3-i2, #f3-i3',
+                opacity: [0, 1],
+                duration: 1500,
+                delay: anime.stagger(400)
+            })
+            .add({
+                targets: '#fondo-mine',
+                opacity: [0, 1]
+            }, '-=1500')
+            .add({
+                targets: '#f1-i1',
+                opacity: [0, 1],
+                translateY: [0, -20]
+            }, '-=1000')
+            .add({
+                targets: '#f1-i2',
+                opacity: [0, 1],
+            }, '-=800')
+            .add({
+                targets: '#f1-i3',
+                opacity: [0, 1],
+                translateY: [0, 20]
+            }, '-=800')
+            .add({
+                targets: '#f2-i1',
+                opacity: [0, 1],
+                duration: 1000
+            }, '-=1000')
+            .add({
+                targets: '#f2-i2',
+                opacity: [0, 1],
+            }, '-=500')
+            .add({
+                targets: '#encabezado h2',
+                opacity: [0, 1],
+            })
+            .add({
+                targets: 'p .letter',
+                opacity: [0, 1],
+                easing: "easeInOutQuad",
+                duration: 1250,
+                delay: (el, i) => 100 * (i + 1)
+            })
+            .add({
+                targets: '#formulario .form-control, #formulario > input',
+                opacity: [0, 1],
+                duration: 1500,
+                delay: anime.stagger(800)
+            });
+
+
+
+            // Wrap every letter in a span
+
+
+
+
     </script>
-  </body>
+</body>
+
 </html>

@@ -4,6 +4,10 @@ body {
     font-size: 13px;
     line-height: 1.35
 }
+/*anim iniciales*/
+#logo, #f3-i1, #f3-i2, #f3-i3,#fondo-mine,#f1-i1,#f1-i2,#f1-i3,#f2-i1,#f2-i2,#encabezado h2, p .letter,#formulario .form-control, #formulario > input {
+    opacity: 0;
+}
 
 * {
     -webkit-font-smoothing: antialiased;
@@ -268,63 +272,79 @@ img {
         left: 35px;
         right: 35px;
     }
+
     #encabezado {
         margin-top: 0;
         height: 100%;
         margin-bottom: 30px;
-        display: flex;;
-        flex-direction: column;
+        display: flex;
+        ; flex-direction: column;
     }
+
     #encabezado h1 {
         height: 100%;
     }
+
     .flota-1 {
         left: 15px;
         top: 25%;
     }
+
     .flota-2 {
         left: initial;
         right: 15px
     }
+
     .flota-3 {
         top: 15px;
         right: 15px;
     }
 }
+
 @media screen and (max-width: 480px) {
     #contenedor #formulario .form-control {
         width: 100%;
         margin-bottom: 22px;
     }
+
     #contenedor #formulario .form-control label {
         width: 80px;
     }
+
     #formulario input:nth-child(4) {
         width: 65%;
         margin-left: 5%;
         margin-top: 5px;
     }
+
     #formulario {
         margin-bottom: 10px
     }
+
     .flota-3 {
         width: 40px;
         height: 101px;
     }
+
     .flota-1 {
         width: 60px;
     }
+
     .flota-2 {
         display: none;
     }
+
     #encabezado {
         margin-bottom: 10px;
         width: 100%;
     }
+
     #logo {
         max-width: 180px;
     }
+
     #encabezado h2 {
         margin-bottom: 0;
     }
 }
+
