@@ -61,8 +61,8 @@
         elem.classList.add("opt-" + aleatorio);
 
         //Dividir letras
-        var textWrapper = document.querySelector('#encabezado p');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        /*var textWrapper = document.querySelector('#encabezado p');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");*/
         //Animaciones
         var tl = anime.timeline({
             easing: 'linear',
@@ -110,16 +110,17 @@
                 opacity: [0, 1],
             }, '-=500')
             .add({
-                targets: '#encabezado h2',
+                targets: '#encabezado h2, #encabezado p',
                 opacity: [0, 1],
+                delay: anime.stagger(800)
             })
-            .add({
+            /*.add({
                 targets: 'p .letter',
                 opacity: [0, 1],
                 easing: "easeInOutQuad",
                 duration: 1250,
                 delay: (el, i) => 100 * (i + 1)
-            })
+            })*/
             .add({
                 targets: '#formulario .form-control, #formulario > input',
                 opacity: [0, 1],
