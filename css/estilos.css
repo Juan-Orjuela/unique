@@ -195,31 +195,7 @@ img {
 }
 
 /*Responsive*/
-/*Vertical*/
-@media screen and (max-height: 900px) {
-    .flota-3 {
-        width: 102px;
-        height: 401px;
-    }
 
-    .flota-2 {
-        width: 56px;
-        height: 89px;
-        left: 175px;
-        bottom: 210px
-    }
-}
-
-@media screen and (max-height: 720px) {
-    .flota-3 {
-        width: 62px;
-        height: 201px;
-    }
-
-    #formulario {
-        margin-bottom: 40px
-    }
-}
 
 /*Horizontal*/
 @media screen and (max-width: 1000px) {
@@ -348,3 +324,48 @@ img {
     }
 }
 
+/*Alto de pantalla*/
+@media screen and (max-height: 900px) and (orientation: landscape) {
+    .flota-3 {
+        width: 102px;
+        height: 401px;
+    }
+
+    .flota-2 {
+        width: 56px;
+        height: 89px;
+        left: 175px;
+        bottom: 210px
+    }
+}
+
+@media screen and (max-height: 720px)  and (orientation: landscape) and (min-width: 690px) {
+    .flota-3 {
+        width: 62px;
+        height: 201px;
+    }
+    .flota-1 {
+        top: 65%;
+    }
+    .flota-2 {
+        display: none
+    }
+    #formulario {
+        margin-bottom: 10px
+    }
+}
+@media screen and (max-height: 720px)  and (orientation: landscape) and (max-width: 690px) {
+    .flota-3 {
+        width: 62px;
+        height: 201px;
+    }
+    .flota-1 {
+        display: none
+    }
+    .flota-2 {
+        display: none
+    }
+    #formulario {
+        margin-bottom: 10px
+    }
+}
