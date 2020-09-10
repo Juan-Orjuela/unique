@@ -5,8 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" />
@@ -35,7 +34,7 @@
                 <span>Lanzamiento</span>
             </div>
         </header>
-        <form action="" id="formulario">
+        <form action="thankyou.html" method="get" id="formulario">
             <div class="form-control"><label for="nombre">Nombre</label><input type="text" name="nombre" id="nombre"
                     required></div>
             <div class="form-control"><label for="telefono">Teléfono</label><input type="tel" name="telefono"
@@ -45,15 +44,7 @@
             <input type="submit" value="Enviar">
         </form>
         <div id="fondo-mine" class="fondo"></div>
-        <!-- <div class="flota-1">
-            <img id="f1-i1" src="img/flota-1-i1.svg" alt="item 1">
-            <img id="f1-i2" src="img/flota-1-i2.svg" alt="item 2">
-            <img id="f1-i3" src="img/flota-1-i1.svg" alt="item 3">
-        </div>-->
-        <!-- <div class="flota-2">
-            <img id="f2-i1" src="img/flota-2-i1.svg" alt="item 1">
-            <img id="f2-i2" src="img/flota-2-i2.svg" alt="item 2">
-        </div>-->
+        
         <div class="flota-3">
             <img id="f3-i1" src="img/flota-3-i1.svg" alt="item 1">
             <img id="f3-i2" src="img/flota-3-i2.svg" alt="item 2">
@@ -71,9 +62,7 @@
         var elem = document.getElementById('fondo-mine');
         elem.classList.add("opt-" + aleatorio);
 
-        //Dividir letras
-        /*var textWrapper = document.querySelector('#encabezado p');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");*/
+        
         //Animaciones
         var tl = anime.timeline({
             easing: 'linear',
@@ -129,7 +118,7 @@
 
 
 
-            // Wrap every letter in a span
+            
 
 
 

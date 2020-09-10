@@ -1,12 +1,12 @@
 body {
     background: black;
     font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     line-height: 1.35
 }
 
 /*anim iniciales*/
-#logo, #f3-i1, #f3-i2, #f3-i3,#fondo-mine,#f1-i1,#f1-i2,#f1-i3,#f2-i1,#f2-i2,#encabezado h2, p .letter,#formulario .form-control, #formulario > input, .vertical, .lanzamiento {
+#logo, #f3-i1, #f3-i2, #f3-i3,#fondo-mine,#f1-i1,#f1-i2,#f1-i3,#f2-i1,#f2-i2,#encabezado h2, p .letter,#formulario .form-control, #formulario > input, .vertical, .lanzamiento, #mensaje h2, #mensaje p {
     opacity: 0;
 }
 
@@ -17,7 +17,7 @@ body {
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 27px;
     letter-spacing: 0.02em;
 }
 
@@ -70,7 +70,7 @@ img {
     text-align: right;
     top: 180px;
     font-family: 'Playfair Display', serif;
-    font-size: 0.85rem;
+    font-size: 12px;
     letter-spacing: 0.02em;
     transform: translateY(350%) rotate(-90deg) ;
     transform-origin: 0 0;
@@ -97,6 +97,7 @@ img {
 #encabezado .lanzamiento {
     padding-left: 90px;
     margin-top: 5vh;
+    max-width: 190px;
 }
 
 #encabezado .lanzamiento .fecha {
@@ -110,16 +111,16 @@ img {
     display: inline-block;
     width: 33.333%;
     text-align: center;
-    font-weight: 900;
+    font-weight: 800;
     position: relative;
 }
 
 #encabezado .lanzamiento .fecha span:after {
     content: "";
     background: #c4e6e2;
-    height: 3px;
-    width: 13px;
-    bottom: -2px;
+    height: 5px;
+    width: 14px;
+    bottom: -3px;
     position: absolute;
 }
 
@@ -168,7 +169,7 @@ img {
     color: #c4e6e2;
     text-align: center;
     letter-spacing: 0.5em;
-    padding-top: 8px;
+    padding-top: 12px;
     text-align: center;
 }
 
@@ -176,7 +177,7 @@ img {
     position: relative;
     z-index: 2;
     padding: 0 90px;
-    margin-bottom: 90px;
+    margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -202,12 +203,14 @@ img {
 .form-control label {
     width: 60px;
     padding: 0 8px;
+    font-weight: 800;
+    position: relative;
 }
 
 #formulario input[type="submit"] {
     padding: 0 20px;
     letter-spacing: 0.5em;
-    margin-top: 32px;
+    margin-top: 48px;
     margin-left: 66.6666%;
     margin-left: calc(66.6666% + 8px);
     border: 0;
@@ -556,4 +559,41 @@ img {
     #formulario {
         margin-bottom: 10px
     }
+}
+/*Thankyou*/
+#thankyou .flota-3{
+    position: relative;
+    top: initial;
+    right: initial;
+}
+#thankyou #mensaje {
+    background: rgb(0 0 0 / 56%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    text-align:center;
+}
+#thankyou #mensaje h2 {
+    color: #c4e6e2;
+    margin-top: 5vh;
+     margin-bottom: 5vh;
+}
+#thankyou #mensaje .flota-ty {
+    width: 50px;
+    text-align: center;
+}
+@media screen and (min-width: 721px) {
+    .form-control label:after {
+    content: "";
+    background: #c4e6e2;
+    height: 5px;
+    width: 14px;
+    bottom: -16px;
+    left: 35%;
+    position: absolute;
+}
 }
