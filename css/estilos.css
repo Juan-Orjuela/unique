@@ -4,6 +4,7 @@ body {
     font-size: 13px;
     line-height: 1.35
 }
+
 /*anim iniciales*/
 #logo, #f3-i1, #f3-i2, #f3-i3,#fondo-mine,#f1-i1,#f1-i2,#f1-i3,#f2-i1,#f2-i2,#encabezado h2, p .letter,#formulario .form-control, #formulario > input {
     opacity: 0;
@@ -43,9 +44,8 @@ img {
 }
 
 #logo {
-    margin-left: -15px;
     margin-bottom: 5vh;
-    max-width: 230px;
+    max-width: 300px;
 }
 
 .fondo {
@@ -60,12 +60,116 @@ img {
 #encabezado {
     position: relative;
     z-index: 2;
-    width: 300px;
+    width: 340px;
     margin-top: 35px
 }
 
-#encabezado p {
-    padding-left: 30px;
+#encabezado .vertical {
+    position: absolute;
+    left: 0;
+    text-align: right;
+    top: 180px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    transform: translateY(350%) rotate(-90deg) ;
+    transform-origin: 0 0;
+}
+
+#encabezado .vertical::after {
+    content: "";
+    background: #c4e6e2;
+    width: 3px;
+    height: 13px;
+    bottom: -10px;
+    right: -18px;
+    position: absolute;
+}
+
+#encabezado h2, #encabezado p {
+    padding-left: 90px;
+}
+
+#encabezado h2 {
+    color: #c4e6e2;
+}
+
+#encabezado .lanzamiento {
+    padding-left: 90px;
+    margin-top: 5vh;
+}
+
+#encabezado .lanzamiento .fecha {
+    border-bottom: 1px solid white;
+    position: relative;
+}
+
+#encabezado .lanzamiento .fecha span {
+    font-size: 20px;
+    padding-bottom: 18px;
+    display: inline-block;
+    width: 33.333%;
+    text-align: center;
+    font-weight: 900;
+    position: relative;
+}
+
+#encabezado .lanzamiento .fecha span:after {
+    content: "";
+    background: #c4e6e2;
+    height: 3px;
+    width: 13px;
+    bottom: -2px;
+    position: absolute;
+}
+
+#encabezado .lanzamiento .fecha span:before {
+    content: "";
+    background: #c4e6e2;
+    height: 8px;
+    width: 8px;
+    right: 15%;
+    top: 10px;
+    border-radius: 100%;
+    position: absolute;
+}
+
+#encabezado .lanzamiento .fecha span:nth-child(2)::before {
+    right: -25%;
+}
+
+#encabezado .lanzamiento .fecha span:last-child:before {
+    display: none
+}
+
+#encabezado .lanzamiento .fecha span:first-child {
+    text-align: left;
+}
+
+#encabezado .lanzamiento .fecha span:last-child {
+    text-align: right;
+}
+
+#encabezado .lanzamiento .fecha span:first-child:after {
+    left: 0;
+}
+
+#encabezado .lanzamiento .fecha span:nth-child(2):after {
+    left: 50%;
+    margin-left: -6px;
+}
+
+#encabezado .lanzamiento .fecha span:last-child:after {
+    right: 0;
+}
+
+#encabezado .lanzamiento > span {
+    display: block;
+    color: #c4e6e2;
+    text-align: center;
+    letter-spacing: 0.5em;
+    padding-top: 8px;
+    text-align: center;
 }
 
 #formulario {
@@ -101,7 +205,7 @@ img {
 }
 
 #formulario input[type="submit"] {
-    padding:0 20px;
+    padding: 0 20px;
     letter-spacing: 0.5em;
     margin-top: 32px;
     margin-left: 66.6666%;
@@ -114,10 +218,12 @@ img {
     cursor: pointer;
     transition: all 1s ease;
 }
+
 #formulario input[type="submit"]:hover {
     color: #c4e6e2;
     background: transparent;
 }
+
 /*Flotantes*/
 .flota-1, .flota-2, .flota-3 {
     z-index: 3;
@@ -176,6 +282,7 @@ img {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .fondo:before {
     content: "";
     position: absolute;
@@ -185,6 +292,7 @@ img {
     bottom: 0;
     box-shadow: 0 0 60px 50px rgba(0,0,0,1) inset;
 }
+
 .fondo:after {
     content: "";
     position: absolute;
@@ -211,8 +319,6 @@ img {
 }
 
 /*Responsive*/
-
-
 /*Horizontal*/
 @media screen and (max-width: 1000px) {
     #formulario {
@@ -222,6 +328,14 @@ img {
     .flota-3 {
         width: 102px;
         height: 401px;
+    }
+
+    #encabezado {
+        width: 260px
+    }
+
+    #encabezado h2, #encabezado p, #encabezado .lanzamiento {
+        padding-left: 60px;
     }
 }
 
@@ -270,7 +384,25 @@ img {
         height: 100%;
         margin-bottom: 30px;
         display: flex;
-        ; flex-direction: column;
+        flex-direction: column;
+        width: initial;
+    }
+
+    #encabezado h2, #encabezado p, #encabezado .lanzamiento {
+        padding-left: 10px;
+    }
+
+    #encabezado #logo {
+        max-width: 260px;
+    }
+
+    #encabezado h2 br {
+        display: none;
+    }
+
+    #encabezado .lanzamiento {
+        max-width: 260px;
+        margin-top: 10px;
     }
 
     #encabezado h1 {
@@ -291,6 +423,9 @@ img {
         top: 15px;
         right: 15px;
     }
+    #encabezado .vertical {
+        top: 135px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -302,11 +437,12 @@ img {
     #contenedor #formulario .form-control label {
         width: 80px;
     }
+
     #formulario {
         justify-content: flex-end;
     }
+
     #formulario input:nth-child(4) {
-        
         width: initial;
         margin-top: 5px;
     }
@@ -333,12 +469,27 @@ img {
         width: 100%;
     }
 
-    #logo {
-        max-width: 180px;
+    #encabezado #logo {
+        max-width: 200px;
     }
 
     #encabezado h2 {
         margin-bottom: 0;
+    }
+    #encabezado .vertical {
+        transform: initial;
+        text-align: left;
+        top: 100px;
+    }
+    #encabezado .vertical:after {
+        display: none;
+    }
+    #encabezado .lanzamiento .fecha span {
+        padding-bottom: 4px;
+        font-size: 16px;
+    }
+    #encabezado .lanzamiento {
+        margin-bottom: 18px;
     }
 }
 
@@ -357,32 +508,39 @@ img {
     }
 }
 
-@media screen and (max-height: 720px)  and (orientation: landscape) and (min-width: 690px) {
+@media screen and (max-height: 720px) and (orientation: landscape) and (min-width: 690px) {
     .flota-3 {
         width: 62px;
         height: 201px;
     }
+
     .flota-1 {
         top: 65%;
     }
+
     .flota-2 {
         display: none
     }
+
     #formulario {
         margin-bottom: 10px
     }
 }
-@media screen and (max-height: 720px)  and (orientation: landscape) and (max-width: 690px) {
+
+@media screen and (max-height: 720px) and (orientation: landscape) and (max-width: 690px) {
     .flota-3 {
         width: 62px;
         height: 201px;
     }
+
     .flota-1 {
         display: none
     }
+
     .flota-2 {
         display: none
     }
+
     #formulario {
         margin-bottom: 10px
     }

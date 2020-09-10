@@ -26,10 +26,14 @@
 <body>
     <main id="contenedor">
         <header id="encabezado">
-            <h1 id="logo"><img src="img/logo-mine.svg" alt="Mine"></h1>
-            <h2>¿Qué es grandeza?</h2>
-            <p>Espacios que asombran y experiencias superiores pronto reescribirán su significado, regístrese y sea uno
-                de los primeros en vivirlo desde su propio apartamento.</p>
+            <h1 id="logo"><img src="img/logo-mine-2.svg" alt="Mine"></h1>
+            <h2>Aquí se reescribe <br>el significado <br>de grandeza</h2>
+            <p>Experiencias y espacios sofisticados están a punto de convertirse en su estilo de vida, regístrese ahora y sea uno de los primeros en acceder a nuestros precios de pre-lanzamiento.</p>
+            <h3 class="vertical">Smart Lofts<br> en Bogotá, Colombia.</h3>
+            <div class="lanzamiento">
+                <div class="fecha"><span>01</span><span>10</span><span>20</span></div>
+                <span>Lanzamiento</span>
+            </div>
         </header>
         <form action="" id="formulario">
             <div class="form-control"><label for="nombre">Nombre</label><input type="text" name="nombre" id="nombre"
@@ -41,15 +45,15 @@
             <input type="submit" value="Enviar">
         </form>
         <div id="fondo-mine" class="fondo"></div>
-        <div class="flota-1">
+        <!-- <div class="flota-1">
             <img id="f1-i1" src="img/flota-1-i1.svg" alt="item 1">
             <img id="f1-i2" src="img/flota-1-i2.svg" alt="item 2">
             <img id="f1-i3" src="img/flota-1-i1.svg" alt="item 3">
-        </div>
-        <div class="flota-2">
+        </div>-->
+        <!-- <div class="flota-2">
             <img id="f2-i1" src="img/flota-2-i1.svg" alt="item 1">
             <img id="f2-i2" src="img/flota-2-i2.svg" alt="item 2">
-        </div>
+        </div>-->
         <div class="flota-3">
             <img id="f3-i1" src="img/flota-3-i1.svg" alt="item 1">
             <img id="f3-i2" src="img/flota-3-i2.svg" alt="item 2">
@@ -93,46 +97,34 @@
                 targets: '#fondo-mine',
                 opacity: [0, 1]
             }, '-=1500')
-            .add({
-                targets: '#f1-i1',
-                opacity: [0, 1],
-                translateY: [0, -20]
-            }, '-=1000')
-            .add({
-                targets: '#f1-i2',
-                opacity: [0, 1],
-            }, '-=800')
-            .add({
-                targets: '#f1-i3',
-                opacity: [0, 1],
-                translateY: [0, 20]
-            }, '-=800')
-            .add({
-                targets: '#f2-i1',
-                opacity: [0, 1],
-                duration: 1000
-            }, '-=1000')
-            .add({
-                targets: '#f2-i2',
-                opacity: [0, 1],
-            }, '-=500')
+            
             .add({
                 targets: '#encabezado h2, #encabezado p',
                 opacity: [0, 1],
-                delay: anime.stagger(800)
-            })
-            /*.add({
-                targets: 'p .letter',
+                duration:800,
+                delay: anime.stagger(600)
+            }, '-=600')
+            .add({
+                targets: '#encabezado .vertical',
                 opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 1250,
-                delay: (el, i) => 100 * (i + 1)
-            })*/
+                duration:800
+            }, '-=400')
+            .add({
+                targets: '#encabezado .lanzamiento',
+                opacity: [0, 1],
+                duration:800
+            })
+            .add({
+                targets: '#encabezado .lanzamiento .fecha span',
+                opacity: [0, 1],
+                duration: 600,
+                delay: anime.stagger(400)
+            })
             .add({
                 targets: '#formulario .form-control, #formulario > input',
                 opacity: [0, 1],
-                duration: 1500,
-                delay: anime.stagger(800)
+                duration: 1000,
+                delay: anime.stagger(600)
             });
 
 
