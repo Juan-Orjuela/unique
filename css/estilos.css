@@ -430,6 +430,9 @@ img {
 }
 
 @media screen and (max-width: 480px) {
+    #contenedor {
+        padding-top: 0;
+    }
     #contenedor #formulario .form-control {
         width: 100%;
         margin-bottom: 22px;
@@ -449,7 +452,7 @@ img {
     }
 
     #formulario {
-        margin-bottom: 30px
+        margin-bottom: 50px
     }
 
     .flota-3 {
