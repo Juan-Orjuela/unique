@@ -180,11 +180,12 @@ img {
     margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #formulario > div {
     width: 33.33333%;
-    margin: 0;
+    margin: 0 0 40px;
 }
 
 .form-control {
@@ -201,16 +202,16 @@ img {
 }
 
 .form-control label {
-    width: 60px;
     padding: 0 8px;
     font-weight: 800;
     position: relative;
+    min-width: 60px;
+    text-align: center;
 }
 
 #formulario input[type="submit"] {
     padding: 0 20px;
     letter-spacing: 0.5em;
-    margin-top: 48px;
     margin-left: 66.6666%;
     margin-left: calc(66.6666% + 8px);
     border: 0;
@@ -352,17 +353,18 @@ img {
         margin-bottom: 40px
     }
 
-    #formulario .form-control:nth-child(1), #formulario .form-control:nth-child(2) {
+    
+    #formulario > div {
         width: 50%;
+        margin: 0 0 20px;
+        
     }
-
-    #formulario .form-control:nth-child(3) {
-        width: 50%;
+    #formulario > div label {
+        text-align: left;
     }
-
-    #formulario input:nth-child(4) {
-        width: 45%;
-        margin-left: 5%;
+    #formulario > #formsubmit {
+        width: 25%;
+        margin-left: 25%;
     }
 }
 
@@ -398,7 +400,9 @@ img {
     #encabezado #logo {
         max-width: 260px;
     }
-
+    #encabezado h2 {
+        max-width: 320px;
+    }
     #encabezado h2 br {
         display: none;
     }
@@ -436,9 +440,10 @@ img {
     #contenedor {
         padding-top: 0;
     }
-    #contenedor #formulario .form-control {
+
+    #contenedor #formulario > div {
         width: 100%;
-        margin-bottom: 22px;
+        margin-bottom: 18px;
     }
 
     #contenedor #formulario .form-control label {
@@ -448,11 +453,11 @@ img {
     #formulario {
         justify-content: flex-end;
     }
-
-    #formulario input:nth-child(4) {
-        width: initial;
-        margin-top: 5px;
-    }
+    #formulario > #formsubmit {
+    width: 50%;
+    margin-left: 25%;
+}
+    
 
     #formulario {
         margin-bottom: 50px
@@ -560,12 +565,14 @@ img {
         margin-bottom: 10px
     }
 }
+
 /*Thankyou*/
-#thankyou .flota-3{
+#thankyou .flota-3 {
     position: relative;
     top: initial;
     right: initial;
 }
+
 #thankyou #mensaje {
     background: rgb(0 0 0 / 56%);
     height: 100vh;
@@ -575,25 +582,44 @@ img {
     align-items: center;
     position: relative;
     z-index: 5;
-    text-align:center;
+    text-align: center;
 }
+
 #thankyou #mensaje h2 {
     color: #c4e6e2;
     margin-top: 5vh;
-     margin-bottom: 5vh;
+    margin-bottom: 5vh;
 }
+
 #thankyou #mensaje .flota-ty {
     width: 50px;
     text-align: center;
 }
+
 @media screen and (min-width: 721px) {
     .form-control label:after {
-    content: "";
-    background: #c4e6e2;
-    height: 5px;
-    width: 14px;
-    bottom: -16px;
-    left: 35%;
-    position: absolute;
+        content: "";
+        background: #c4e6e2;
+        height: 5px;
+        width: 14px;
+        bottom: -16px;
+        left: 50%;
+        margin-left: -7px;
+        position: absolute;
+    }
+
+    
 }
+
+#formulario select {
+    background: #000000;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    width: 100%;
+}
+
+#formulario select:focus {
+    outline: none;
 }
